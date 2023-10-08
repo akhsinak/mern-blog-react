@@ -28,13 +28,13 @@ export default function Write() {
       newPost.photo = filename;
 
       try {
-        await axios.post("/upload", data);
+        await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/upload", data);
       } catch (err) { }
     }
 
 
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) { }
   };

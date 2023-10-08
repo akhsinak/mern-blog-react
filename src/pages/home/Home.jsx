@@ -18,7 +18,7 @@ export default function Homepage() {
   useEffect(() => {
 
     const fetchPosts = async () => {
-      const res = await axios.get("/posts" + searchf);
+      const res = await axios.get("https://mern-blog-api-akhsinak.vercel.app/api/posts" + searchf);
       console.log(res);
       setPosts(res.data);
     }

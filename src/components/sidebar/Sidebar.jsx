@@ -9,7 +9,7 @@ export default function Sidebar() {
 
     useEffect(() => {
         const getCat = async () => {
-            const res = await axios.get("/categories");
+            const res = await axios.get("https://mern-blog-api-akhsinak.vercel.app/api/categories");
             console.log(res.data);
             setCat(res.data);
         }
