@@ -1,0 +1,69 @@
+.top {
+  width: 95%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.topleft,
+.topright {
+  flex: 1;
+  /* background-color: lightblue; */
+}
+
+.topcenter {
+  flex: 2;
+  /* background-color: cyan; */
+}
+
+.topleft {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.topright {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.profileIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.topList {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topListItem {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  color: #444;
+}
+
+.searchicon {
+  font-size: 18px;
+  color: #666;
+}
+
+.topIcon {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.links {
+  text-decoration: none;
+  color: inherit;
+}

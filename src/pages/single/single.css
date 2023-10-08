@@ -1,0 +1,7 @@
+.single {
+  display: flex;
+  gap: 40px;
+  width: 95vw;
+  margin: auto;
+  margin-top: 40px;
+}
