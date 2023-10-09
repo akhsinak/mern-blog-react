@@ -13,8 +13,12 @@ export default function Settings() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
+  // const [imageURL, setImageURL] = useState("");
 
-  const PF = "https://mern-blog-api-akhsinak.vercel.app/images/";
+
+
+  // const PF = "http://localhost:4000/images/";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,16 +34,17 @@ export default function Settings() {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      updatedUser.profilepic = filename;
+
 
       try {
-        await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/upload", data);
+        const res2 = await axios.post("/upload", data);
+        updatedUser.profilepic = res2.data.url;
       } catch (err) { }
     }
 
 
     try {
-      const res = await axios.put("https://mern-blog-api-akhsinak.vercel.app/api/users/" + user._id, updatedUser);
+      const res = await axios.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
@@ -62,9 +67,14 @@ export default function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF + user.profilepic}
+              src={file ? URL.createObjectURL(file) : user.profilepic}
               alt=""
             />
+            {/* <img
+              src={file ? URL.createObjectURL(file) : imageURL}
+              // src={imageURL}
+              alt=""
+            /> */}
 
 
             <label htmlFor="fileInput">

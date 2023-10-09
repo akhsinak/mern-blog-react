@@ -11,7 +11,7 @@ export default function TopBar() {
         dispatch({ type: "LOGOUT" })
     }
 
-    const PF = "https://mern-blog-api-akhsinak.vercel.app/images/"
+    // const PF = "http://localhost:4000/images/"
 
     return (
         <div className="top">
@@ -49,7 +49,7 @@ export default function TopBar() {
             <div className="topright">
                 <Link to="/settings" className="link">
                     {user ? (
-                        < img className="profileIcon" src={PF + user.profilepic} alt="" />
+                        < img className="profileIcon" src={user.profilepic} alt="" />
                     )
                         : (
                             <ul className="topList">

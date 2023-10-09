@@ -3,7 +3,7 @@ import "./post.css";
 
 export default function Post({ post }) {
 
-  const PF = "https://mern-blog-api-akhsinak.vercel.app/images/"
+  // const PF = "http://localhost:4000/images/"
 
   return (
     <div className="post">
@@ -11,7 +11,7 @@ export default function Post({ post }) {
         post.photo &&
         <img
           className="postImg"
-          src={PF + post.photo}
+          src={post.photo}
           alt=""
         />
       }

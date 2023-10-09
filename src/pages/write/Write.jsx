@@ -25,16 +25,17 @@ export default function Write() {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      newPost.photo = filename;
 
       try {
-        await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/upload", data);
+        // await axios.post("/upload", data);
+        const res2 = await axios.post("/upload", data);
+        newPost.photo = res2.data.url;
       } catch (err) { }
     }
 
 
     try {
-      const res = await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/posts", newPost);
+      const res = await axios.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) { }
   };
