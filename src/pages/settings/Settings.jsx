@@ -37,14 +37,14 @@ export default function Settings() {
 
 
       try {
-        const res2 = await axios.post("/upload", data);
+        const res2 = await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/upload", data);
         updatedUser.profilepic = res2.data.url;
       } catch (err) { }
     }
 
 
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put("https://mern-blog-api-akhsinak.vercel.app/api/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {

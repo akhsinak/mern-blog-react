@@ -28,14 +28,14 @@ export default function Write() {
 
       try {
         // await axios.post("/upload", data);
-        const res2 = await axios.post("/upload", data);
+        const res2 = await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/upload", data);
         newPost.photo = res2.data.url;
       } catch (err) { }
     }
 
 
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post("https://mern-blog-api-akhsinak.vercel.app/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) { }
   };
